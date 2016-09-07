@@ -18,6 +18,12 @@ int main(int argc, const char * argv[]) {
     
     char fileptr[] = "test.cpp";
     
-    tokeniser.getTokens(fileptr);
+    vector<string> ret = tokeniser.getTokens(fileptr);
+    
+    for (int i = 0; i<ret.size(); i++) {
+        cout << ret[i] << endl;
+    }
+    
+    
     return 0;
 }

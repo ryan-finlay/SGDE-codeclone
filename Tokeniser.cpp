@@ -48,6 +48,7 @@ vector<string> Tokeniser::getTokens(char* file){
     removeWhitespace();
     removeComments();
     removeEmptyLines();
+    removeIncludes();
     
     
     return tokens;
@@ -132,6 +133,21 @@ void Tokeniser::removeEmptyLines(){
     for(int i = 0; i < tokens.size() ; i++){
         //if empty skip
         if(tokens[i].empty()){
+            continue;
+        }
+        //otherwise push to the back of the new tokens
+        temp.push_back(tokens[i]);
+    }
+    //update the tokens
+    tokens = temp;
+}
+
+void Tokeniser::removeIncludes(){
+    vector<string> temp;
+    
+    for(int i = 0; i < tokens.size() ; i++){
+        //if empty skip
+        if(tokens[i][0] == '#'){
             continue;
         }
         //otherwise push to the back of the new tokens

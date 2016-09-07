@@ -19,6 +19,7 @@ private:
     void removeWhitespace();
     void removeComments();
     void removeEmptyLines();
+    void removeIncludes();
     
     
 public:
