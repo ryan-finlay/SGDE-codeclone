@@ -22,7 +22,7 @@ private:
     
     
 public:
-    std::vector<std::string> getTokens(std::string file);
+    std::vector<std::string> getTokens(char* file);
     Tokeniser();
     ~Tokeniser();
 };

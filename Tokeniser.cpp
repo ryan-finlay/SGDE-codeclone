@@ -11,6 +11,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -29,7 +30,7 @@ Tokeniser::~Tokeniser(){
  *  returns - vector of all the tokens
  */
 
-vector<string> Tokeniser::getTokens(string file){
+vector<string> Tokeniser::getTokens(char* file){
     
     //clear the previous tokens
     tokens.erase(tokens.begin(), tokens.end());

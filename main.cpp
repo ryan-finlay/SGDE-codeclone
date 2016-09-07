@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include "Tokeniser.cpp"
 
 using namespace std;
@@ -15,6 +16,8 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     Tokeniser tokeniser;
     
-    tokeniser.getTokens("test.cpp");
+    char fileptr[] = "test.cpp";
+    
+    tokeniser.getTokens(fileptr);
     return 0;
 }
