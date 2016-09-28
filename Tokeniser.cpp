@@ -38,11 +38,12 @@ vector<string> Tokeniser::getTokens(char* file){
     //add the new tokens in line by line
     ifstream fptr(file);
     string line;
-   
+	
     while(getline(fptr,line)){
         tokens.push_back(line); //push to back of tokens vector
         
     }
+	
     fptr.close();
     
     removeWhitespace();
@@ -52,6 +53,7 @@ vector<string> Tokeniser::getTokens(char* file){
     
     
     return tokens;
+	
 }
 
 
@@ -120,9 +122,11 @@ void Tokeniser::removeWhitespace(){
         currToken.erase(remove_if(currToken.begin(), currToken.end(), ::isspace),currToken.end());
         
         //remove all the end of line chars
-        while(currToken[currToken.size()-1] == '\r' || currToken[currToken.size()-1] == '\n'){
-            currToken.erase(currToken.size()-1);
-        }
+		if(currToken.size()!=0) {
+			while(currToken[currToken.size()-1] == '\r' || currToken[currToken.size()-1] == '\n'){
+				currToken.erase(currToken.size()-1);
+			}
+		}
         tokens[i] = currToken;
     }
 }
