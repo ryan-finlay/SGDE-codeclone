@@ -23,12 +23,11 @@ int main(int argc, char * argv[]) {
 			for(int k = i+1;k<argc;k++) {
 				Tokeniser tokeniser;
 				Compare compare;
-				cout << "Comparing " << argv[i] << " and " << argv[k] << "..." << endl;
 				vector<string> ret = tokeniser.getTokens(argv[i]);
 				vector<string> ret2 = tokeniser.getTokens(argv[k]);
-				compare.print(ret,ret2,compare.clones(ret,ret2));
-				cout << endl;
-			}
+                //compare.print(argv[i], argv[k], ret,ret2,compare.clones(ret,ret2));
+                compare.print(argv[i], argv[k], ret,ret2,compare.partClones(ret,ret2));
+            }
 		}
 	}
    
