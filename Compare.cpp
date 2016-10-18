@@ -4,8 +4,10 @@
 using namespace std;
 
 
-// Compute Levenshtein Distance
-// Martin Ettl, 2012-10-05
+/*
+ * Compute Levenshtein Distance
+ * Martin Ettl, 2012-10-05
+ */
 
 size_t Compare::uiLevenshteinDistance(const std::string &s1, const std::string &s2)
 {
@@ -49,6 +51,11 @@ size_t Compare::uiLevenshteinDistance(const std::string &s1, const std::string &
     return result;
 }
 
+/*
+ *  Clones 
+ *  Params - tokens from file 1 and tokens from file 2
+ *  Finds the exact matches in lines from file 1 and file 2 of length defined in CLONE_LENGTH
+ */
 
 
 vector<int> Compare::clones(vector<string> tokens1, vector<string> tokens2) {
@@ -79,14 +86,17 @@ vector<int> Compare::clones(vector<string> tokens1, vector<string> tokens2) {
 			}
 		}
 	}
-	/*for(int i = 0;i<results.size();i++) {
-		cout << results[i] << ":";
-	}
-	cout << endl;*/
+
 	return results;
 	
 }
 
+
+/*
+ *  PartClones
+ *  Params - tokens from file 1 and tokens from file 2
+ *  using the levenshtein distance finds the 5 line blocks that are a 80% match
+ */
 
 
 vector<int> Compare::partClones(vector<string> tokens1, vector<string> tokens2){
@@ -135,6 +145,10 @@ vector<int> Compare::partClones(vector<string> tokens1, vector<string> tokens2){
 }
 
 
+/*
+ *  Print
+ *  Prints out the clones found in all the files.
+ */
 
 
 void Compare::print(char* file1, char* file2, vector<string> tokens1, vector<string> tokens2, vector<int> results) {
